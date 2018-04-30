@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Utility
+   ========================================================================== */
+
+/* Utility
+   ----------------------------------------------------------------- */
+
+.u-fit {
+    width: 100%;
+    height: auto;
+}
+
+.u-inherit {
+    display: inherit;
+}
+
+.u-block {
+    display: block;
+}
+
+.u-none {
+    display: none;
+}
+
+.u-flex {
+    display: flex;
+
+    &.u-flex--center {
+        justify-content: center;
+        align-items: center;
+    }
+}

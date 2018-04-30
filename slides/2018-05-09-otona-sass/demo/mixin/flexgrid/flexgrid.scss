@@ -1,0 +1,51 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@mixin flex-grid( $col: 1, $break: null, $alias: null, $gutter: 0, $space: 0, $prefix: 'col' ) {
+
+    @if ( $break != null and $alias != null and $gutter > 0 ) {
+        @media ( max-width: $break ) {
+            .#{$prefix}-#{$alias}-#{$col}-#{$gutter} {
+                @include flex-col( $col, $gutter, $space );
+            }
+        }
+    }
+    @else if ( $break != null and $alias != null ) {
+        @media ( max-width: $break ) {
+            .#{$prefix}-#{$alias}-#{$col} {
+                @include flex-col( $col, $gutter, $space );
+            }
+        }
+    }
+    @else if ( $gutter > 0 ) {
+        .#{$prefix}-#{$col}-#{$gutter} {
+            @include flex-col( $col, $gutter, $space );
+        }
+    }
+    @else {
+        .#{$prefix}-#{$col} {
+            @include flex-col( $col, $gutter, $space );
+        }
+    }
+}
+
+@mixin flex-col( $col, $gutter, $space ) {
+    flex-basis: calc( 100% / #{$col} - #{$gutter} * 2 );
+    box-sizing: border-box;
+
+    @if ( $gutter > 0 ) {
+        margin-left: $gutter;
+        margin-right: $gutter;
+    }
+
+    @if ( $space > 0 ) {
+        margin-bottom: $space;
+    }
+}
+
+@include flex-grid( 3, null, null, 40px, 30px );
+@include flex-grid( 2, 767px, 'md', 20px, 20px );
+@include flex-grid( 1, 575px, 'sm', 10px, 10px );

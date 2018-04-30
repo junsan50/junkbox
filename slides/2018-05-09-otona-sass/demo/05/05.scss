@@ -1,0 +1,13 @@
+@mixin flex( $centerH: false, $centerV: false ) {
+    display: flex;
+    @if $centerH { justify-content: center; }
+    @if $centerV { align-items: center; }
+}
+
+.u-flex {
+    @include flex;
+}
+
+.u-flex-center {
+    @include flex( true, true );
+}

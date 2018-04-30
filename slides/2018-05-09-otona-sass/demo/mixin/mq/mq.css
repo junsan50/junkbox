@@ -1,0 +1,28 @@
+article {
+    width: 1120px;
+    margin: 0 auto;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    article {
+        width: 90vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    article {
+        width: 50vw;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    article {
+        width: 25vw;
+    }
+}
+
+@media (max-width: 575px) {
+    article {
+        display: none;
+    }
+}

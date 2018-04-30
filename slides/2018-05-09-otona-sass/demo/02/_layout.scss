@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+/* Header
+   ----------------------------------------------------------------- */
+.l-header {
+    padding: 20px;
+    color: #fff;
+    background: #000;
+
+    &__brand {
+        padding: 10px;
+
+        h1 {
+            color: #323232;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        span {
+            color: #aaa;
+            font-size: .875rem;
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+
+        p {
+            color: #aaa;
+            font-size: .875rem;
+        }
+    }
+}

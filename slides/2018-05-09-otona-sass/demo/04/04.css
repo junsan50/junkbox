@@ -1,0 +1,11 @@
+.c-box {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.c-box-200 {
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 200px;
+    height: 200px;
+}

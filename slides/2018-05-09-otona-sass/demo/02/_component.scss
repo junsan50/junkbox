@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Component
+   ========================================================================== */
+
+/* box
+   ----------------------------------------------------------------- */
+.c-box {
+    padding: 10px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.15);
+
+    &.c-box--radius {
+        border-radius: 4px;
+    }
+}
+
+/* btn
+   ----------------------------------------------------------------- */
+.c-btn {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    color: #323232;
+    font-size: .875rem;
+    font-weight: bold;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #ddd;
+    transition: border .3s, background .3s;
+    transition-timing-function: cubic-bezier( .05,.75,.16,.98 );
+
+    @media only screen and ( max-width: 575px ) {
+        font-size: .75rem;
+        padding: 14px;
+    }
+
+    &:hover {
+        color: #fff;
+        background-color: #ddd;
+    }
+}

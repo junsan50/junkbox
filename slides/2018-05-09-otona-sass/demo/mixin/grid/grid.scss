@@ -1,0 +1,49 @@
+@mixin grid( $col: 1, $break: null, $alias: null, $gutter: 0, $space: 0, $prefix: 'grid' ) {
+    @if ( $break != null and $alias != null and $gutter > 0 ) {
+        @media ( max-width: $break ) {
+            .#{$prefix}-#{$alias}-#{$col}-#{$gutter} {
+                @include grid-set( $col, $gutter, $space );
+            }
+        }
+    }
+    @else if ( $break != null and $alias != null ) {
+        @media ( max-width: $break ) {
+            .#{$prefix}-#{$alias}-#{$col} {
+                @include grid-set( $col, $gutter, $space );
+            }
+        }
+    }
+    @else if ( $gutter > 0 ) {
+        .#{$prefix}-#{$col}-#{$gutter} {
+            @include grid-set( $col, $gutter, $space );
+        }
+    }
+    @else {
+        .#{$prefix}-#{$col} {
+            @include grid-set( $col, $gutter, $space );
+        }
+    }
+}
+
+@mixin grid-set( $col, $gutter, $space ) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax( calc( 100% / #{$col} - #{$gutter} * 2 ), 1fr ) );
+    grid-auto-rows: 1fr;
+    grid-gap:  $gutter;
+    margin-bottom: $space;
+
+    @if ( $gutter > 0 ) {
+        margin-left: $gutter;
+        margin-right: $gutter;
+    }
+
+    @if ( $space > 0 ) {
+        .gcol {
+            margin-bottom: $space;
+        }
+    }
+}
+
+@include grid( 3, null, null, 40px, 30px );
+@include grid( 2, 767px, 'md', 20px, 20px );
+@include grid( 1, 575px, 'sm', 10px, 10px );
