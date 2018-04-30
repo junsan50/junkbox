@@ -24,7 +24,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-                <section data-markdown="/slides/2018-05-09-otona-sass/index.md"
+                <section data-markdown="./index.md"
                          data-separator="\n---\n$"
                          data-vertical="\n--\n">
                 </section>
@@ -37,10 +37,10 @@
 		<script>
 			Reveal.initialize({
 				dependencies: [
-					{ src: '/slides/plugin/markdown/marked.js' },
-					{ src: '/slides/plugin/markdown/markdown.js' },
-					{ src: '/slides/plugin/notes/notes.js', async: true },
-					{ src: '/slides/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
